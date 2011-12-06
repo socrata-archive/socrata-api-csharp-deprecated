@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{48016375-554E-448B-B4B3-E1B1D61D3491}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SocrataTests</RootNamespace>
+    <AssemblyName>SocrataTests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integration\ServerTest.cs" />
+    <Compile Include="Helpers\TestHelper.cs" />
+    <Compile Include="Integration\Search\SearchTest.cs" />
+    <Compile Include="Unit\Data\View\MetadataTest.cs" />
+    <Compile Include="Unit\Data\View\ColumnTest.cs" />
+    <Compile Include="Unit\Data\View\BlueprintUnitTest.cs" />
+    <Compile Include="Unit\Data\View\ImportUnitTest.cs" />
+    <Compile Include="Integration\Data\View\ImportTest.cs" />
+    <Compile Include="Integration\Data\View\ColumnTest.cs" />
+    <Compile Include="Integration\Data\View\ViewMetadataTest.cs" />
+    <Compile Include="Integration\Data\View\CustomMetadataTest.cs" />
+    <Compile Include="Integration\Data\View\PublishingTest.cs" />
+    <Compile Include="Integration\Data\View\AppendReplaceTest.cs" />
+    <Compile Include="Integration\Data\View\RowTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Socrata\Socrata.csproj">
+      <Project>{E8EDEEEB-9E91-48DC-84EF-1DC7EB19187E}</Project>
+      <Name>Socrata</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Integration\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Integration\Search\" />
+    <Folder Include="Integration\Data\" />
+    <Folder Include="Integration\Data\View\" />
+    <Folder Include="Unit\" />
+    <Folder Include="Unit\Data\" />
+    <Folder Include="Unit\Data\View\" />
+    <Folder Include="Fixtures\" />
+  </ItemGroup>
+</Project>

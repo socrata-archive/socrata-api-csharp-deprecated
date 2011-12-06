@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8EDEEEB-9E91-48DC-84EF-1DC7EB19187E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Socrata</RootNamespace>
+    <AssemblyName>Socrata</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Data\Model.cs" />
+    <Compile Include="Search\ViewSearcher.cs" />
+    <Compile Include="Data\View\Row.cs" />
+    <Compile Include="Data\View\View.cs" />
+    <Compile Include="Data\View\Column.cs" />
+    <Compile Include="Data\View\Query.cs" />
+    <Compile Include="Server\HttpConnection.cs" />
+    <Compile Include="Server\IConnection.cs" />
+    <Compile Include="Exceptions\SocrataServerException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Exceptions\ForbiddenException.cs" />
+    <Compile Include="Exceptions\InvalidRequestException.cs" />
+    <Compile Include="Server\ConnectionFactory.cs" />
+    <Compile Include="Data\View\Blueprint.cs" />
+    <Compile Include="Server\SocrataWebClient.cs" />
+    <Compile Include="Data\Configuration.cs" />
+    <Compile Include="Data\View\ScanResult.cs" />
+    <Compile Include="Util\Strings.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Search\" />
+    <Folder Include="Data\View\" />
+    <Folder Include="Server\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+</Project>

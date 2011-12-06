@@ -1,0 +1,14 @@
+**/bin/*
+*.userprefs
+**/*.pidb
+*.pc
+*.pc.in
+*.dll
+*.exe
+Test/obj
+TestResult.xml
+.DS_Store
+test-results
+*.mdb
+*.FilesWrittenABsolute.txt
+Socrata/obj
