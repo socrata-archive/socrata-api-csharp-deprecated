@@ -188,7 +188,8 @@ namespace Socrata.Data.View
 		{
 			string permission = isPublic ? "public.read" : "private";
 			IConnection conn = getConnectionForResource(String.Format("?method=setPermission&value={0}", permission), "PUT");
-			conn.Close();
+			conn.OutboundStream.Close();
+			conn.InboundStream.Close();
 		}
 		
 		/// <summary>
