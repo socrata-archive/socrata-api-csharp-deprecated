@@ -14,13 +14,13 @@ namespace SocrataTests
 		public void TestPerformSearch()
 		{
 			// just make sure a basic search works without throwing an error
-			ViewSearcher.PerformSearch("jenkins", null, getDefaultSearchParams());
+			ViewSearcher.PerformSearch("foo", null, getDefaultSearchParams());
 		}
 		
 		[Test]
 		public void TestSearchWithRowCount()
 		{
-			List<ViewSearchResult> results = ViewSearcher.PerformSearch("jenkins", 1, getDefaultSearchParams());
+			List<ViewSearchResult> results = ViewSearcher.PerformSearch("foo", 1, getDefaultSearchParams());
 			if (results == null)
 			{
 				return;	
