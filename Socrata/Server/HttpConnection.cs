@@ -64,17 +64,10 @@ namespace Socrata.Server
 		
 		public string ReadJsonResponse()
 		{
-			var buffer = new StringBuilder();
 			using (var reader = new StreamReader(this.InboundStream))
 			{
-				while (reader.Peek() >= 0)
-				{
-					var line = reader.ReadLine();
-					if (line != null)
-						buffer.Append(line.Trim());
-				}
-			}
-			return buffer.ToString();
+                return reader.ReadToEnd();
+            }
 		}
 		
 		public void Close()
