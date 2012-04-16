@@ -101,7 +101,7 @@ namespace SocrataTests
 			var columns = v.Columns();
 			Expect (columns.Count, Is.EqualTo(4));
 			
-			string[] types = {"date", "percent", "location", "money"};
+			string[] types = {"calendar_date", "percent", "location", "money"};
 			string[] names = {"Date", "Confidence", "Address", "Money"};
 			VerifyColumnsInView(v, names, types);
 			
