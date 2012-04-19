@@ -54,18 +54,29 @@ Importing a file
 
     v = v.ImportFile("cyborgs_onecolumn.csv", 1);
 
+Creating a working copy
+_______________________
+
+    // Find your existing dataset, either by search or from ID
+    View v = View.fromId("cybo-rgs1");
+
+    // Create a working copy of the dataset
+    View workingCopy = v.WorkingCopy();
+
 Appending to a dataset
 ----------------------
 
     // Find your existing dataset, either by search or from ID
     View v = View.fromId("cybo-rgs1");
-    v = v.Append("cyborg_update.csv");
+    View workingCopy = v.WorkingCopy();    
+    workingCopy = workingCopy.Append("cyborg_update.csv");
 
 Replacing the rows in an existing dataset
 -----------------------------------------
 
     View v = View.fromId("cybo-rgs1");
-    v.Replace("cyborgs_replace.csv");
+    View workingCopy = v.WorkingCopy();
+    workingCopy.Replace("cyborgs_replace.csv");
 
 Publishing a dataset
 --------------------
