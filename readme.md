@@ -55,7 +55,7 @@ Importing a file
     v = v.ImportFile("cyborgs_onecolumn.csv", 1);
 
 Creating a working copy
-_______________________
+-----------------------
 
     // Find your existing dataset, either by search or from ID
     View v = View.FromId("cybo-rgs1");
